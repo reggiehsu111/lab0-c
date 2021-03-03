@@ -18,7 +18,7 @@
 #include "report.h"
 
 /* Some global values */
-bool simulation = false;
+int simulation = 0;
 static cmd_ptr cmd_list = NULL;
 static param_ptr param_list = NULL;
 static bool block_flag = false;

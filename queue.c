@@ -186,15 +186,6 @@ list_ele_t *merge(list_ele_t *left, list_ele_t *right)
         return right;
     if (!right)
         return left;
-    /*
-    if (strcmp(left->value, right->value) < 0) {
-        left->next = merge(left->next, right);
-        return left;
-    } else {
-        right->next = merge(right->next, left);
-        return right;
-    }
-    */
     list_ele_t *head = strcmp(left->value, right->value) < 0 ? left : right;
     list_ele_t *tmp;
     while (left && right) {
@@ -236,7 +227,6 @@ list_ele_t *mergeSort(list_ele_t *head)
         singlePtr = singlePtr->next;
         doublePtr = doublePtr->next->next;
     }
-    // printf("head: %s, single: %s, double:%s\n", head->value,
     // singlePtr->value, doublePtr->value);
     doublePtr = singlePtr->next;
     singlePtr->next = NULL;
